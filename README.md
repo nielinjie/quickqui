@@ -26,7 +26,7 @@
 ### 逻辑设计
 
 如下图。
-![QuickQui 逻辑设计](/doc/QuickQui%20逻辑设计.png)
+![QuickQui 逻辑设计](./doc/QuickQui%20逻辑设计.png)
 
 ### 现阶段实现设计
 
@@ -36,7 +36,7 @@
 1. 目前没有单独的业务层定义，直接借用数据定义。
 
 
-![QuickQui 阶段1](/doc/QuickQui%20阶段1.png)
+![QuickQui 阶段1](./doc/QuickQui%20阶段1.png)
 
 ## 实现
 
@@ -46,10 +46,16 @@
 2. Prisma
 2. React
 3. React-admin
+3. （……）
 
 ### 子项目
 
 1. prototype
 2. model-server
+3. （……）
+
+## 参与
+
+欢迎一切形式的参与，请先联系本项目的owner。
 
 ## Liscense
