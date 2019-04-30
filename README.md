@@ -58,9 +58,9 @@ QuickQui是一个机制和配套工具。通过快速产生原型的办法，支
 
 ### 子项目
 
-1. prototype
-2. model-server
-3. （……）
+1. model-server - https://github.com/quickqui/model-server 定义业务模型。
+2. front - https://github.com/quickqui/front 浏览器端逻辑。从model-server获取业务模型，完成相关展示。
+3. prototype - https://github.com/quickqui/prototype 完成整合。
 
 ### 技术栈
 
