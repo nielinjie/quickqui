@@ -66,9 +66,19 @@ QuickQui是一个机制和配套工具。通过快速产生原型的办法，支
 
 1. GraphQL
 2. Prisma
-2. React
-3. React-admin
-3. （……）
+3. React
+4. React-admin
+5. （……）
+
+### 安装和运行
+
+（目前仅开发适用，待设计）
+
+1. 下载或clone所有子项目，放到一个目录中，假定为QuickQui目录。
+2. cd quickqui/prototype
+3. docker-compose up --build
+4. npx prisma deploy
+5. 浏览器访问 http://localhost:3000
 
 ## 参与
 
