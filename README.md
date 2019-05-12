@@ -1,6 +1,6 @@
-# QuickQui
+# QuickQui项目文档
 
-快速业务原型工具。
+QuickQui是一个快速业务原型的机制和相应工具。
 
 🥚🐣🐥
 
@@ -12,7 +12,7 @@
 
 一方面，创业者和业务创新者需要最小系统来验证业务设计。
 
-另一方面，系统设计者需要一个手段，与相关领域专家讨论业务和系统要求。 
+另一方面，系统设计者需要一个手段，与相关领域专家讨论业务和系统要求。 这里需要一个机制能做到 - 
 
 1. 尽早开始、迭代进行。
 2. 聚焦业务、统一语言。
@@ -39,49 +39,13 @@ QuickQui是一个机制和配套工具。通过快速产生原型的办法，支
 
 ![QuickQui 用例设计](./doc/QuickQui%20用例设计.png)
 
-
 ## 设计
 
-### 逻辑设计
-
-如下图。
-![QuickQui 逻辑设计](./doc/QuickQui%20逻辑设计.png)
-
-### 现阶段实现设计
-
-如下图。  
-
-1. 目前没有单独的业务层定义，直接借用数据定义。
-
-
-![QuickQui 阶段1](./doc/QuickQui%20阶段1.png)
+设计文档 - [./doc/设计.md](./doc/设计.md)
 
 ## 实现
 
-### 子项目
-
-1. model-server - https://github.com/quickqui/model-server 定义业务模型。
-2. front - https://github.com/quickqui/front 浏览器端逻辑。从model-server获取业务模型，完成相关展示。
-3. prototype - https://github.com/quickqui/prototype 完成整合。
-
-### 技术栈
-
-1. GraphQL
-2. Prisma
-3. React
-4. React-admin
-5. （……）
-
-### 安装和运行
-
-（目前仅开发适用，待设计）
-
-1. 下载或clone所有子项目，放到一个目录中，假定为`quickqui`目录。
-2. `cd quickqui/prototype`
-3. `docker-compose up --build`
-4. `npx prisma deploy`
-5. `npx prisma import --data init-example-data.zip`
-6. 浏览器访问 http://localhost:3000
+实现文档 - [./doc/实现.md](./doc/实现.md)
 
 ## 参与
 
