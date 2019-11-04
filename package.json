@@ -1,0 +1,16 @@
+{
+  "name": "@quick-qui/model-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nielinjie <nielinjie@outlook.com>",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^3.6.4",
+    "ulog": "^1.1.0"
+  }
+}
