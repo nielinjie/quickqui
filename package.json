@@ -10,6 +10,8 @@
   "author": "nielinjie <nielinjie@outlook.com>",
   "license": "ISC",
   "dependencies": {
+    "fp-ts": "^2.1.1",
+    "io-ts": "^2.0.1",
     "typescript": "^3.6.4",
     "ulog": "^1.1.0"
   }

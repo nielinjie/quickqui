@@ -1,6 +1,8 @@
 import { ValidateError } from "./ModelValidator";
 import { Model } from "./Model";
 
+import * as t from 'io-ts'
+
 
 export interface ModelDefineConfig {
     name: string;
@@ -11,18 +13,23 @@ export interface ModelDefineConfig {
 
 
 
-export interface ModelDefine<PT> {
+export interface ModelDefine {
     name: string;
     filePattern: string;
-    toPiece(source: object): PT
-    //TODO toPiece和validatePiece是不是要合并合并？
-    validatePiece(piece: PT): ValidateError[]
-    merge(model: Model, piece: PT): Model
+    validatePiece(piece: any, model: Model): ValidateError[]
+    merge(model: Model, piece: any): Model
     validateAfterMerge(model: Model): ValidateError[]
     validateAfterWeave(model: Model): ValidateError[]
 }
 
-
+export const modelDefineRuntimeType = t.type({
+    name: t.string,
+    filePattern: t.string,
+    validatePiece: t.Function,
+    merge: t.Function,
+    validateAfterMerge: t.Function,
+    validateAfterWeave: t.Function
+})
 
 
 
