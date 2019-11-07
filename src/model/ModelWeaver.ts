@@ -23,5 +23,6 @@ export interface ModelWeaverConfig {
 }
 export const modelWeaverRT = t.type({
     name:t.string,
-    weave:t.Function
+    // TODO, instance的方法不是这样的。https://github.com/gcanti/io-ts/issues/272
+    // weave:t.Function
 })
