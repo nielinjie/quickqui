@@ -2,6 +2,8 @@ import { ValidateError } from "./ModelValidator";
 import { Model } from "./Model";
 
 import * as t from 'io-ts'
+import { ModelWeaver } from ".";
+import { modelWeaverRT } from "./ModelWeaver";
 
 
 export interface ModelDefineConfig {
@@ -20,6 +22,7 @@ export interface ModelDefine {
     merge(model: Model, piece: any): Model
     validateAfterMerge(model: Model): ValidateError[]
     validateAfterWeave(model: Model): ValidateError[]
+    weavers:ModelWeaver[]
 }
 
 export const modelDefineRuntimeType = t.type({
@@ -28,7 +31,8 @@ export const modelDefineRuntimeType = t.type({
     validatePiece: t.Function,
     merge: t.Function,
     validateAfterMerge: t.Function,
-    validateAfterWeave: t.Function
+    validateAfterWeave: t.Function,
+    weavers:t.array(modelWeaverRT),
 })
 
 

@@ -1,5 +1,6 @@
 import { Log } from "./Log"
 import { Model } from "./Model"
+import * as t from 'io-ts';
 
 
 export interface ModelWeaver {
@@ -20,3 +21,7 @@ export interface ModelWeaverConfig {
     name:string;
     extend:Promise<ModelWeaver>;
 }
+export const modelWeaverRT = t.type({
+    name:t.string,
+    weave:t.Function
+})
