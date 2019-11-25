@@ -5,10 +5,12 @@ export interface ModelValidator {
 }
 
 export class ValidateError implements Log {
-    category: string = 'validate'
+    category: string = 'model-validate'
     level: string = 'error'
     message: string = ''
-    constructor(message: string) {
+    context:string = ''
+    constructor(context:string,message: string) {
         this.message = message
+        this.context = context
     }
 }

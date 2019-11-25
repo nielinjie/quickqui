@@ -5,6 +5,7 @@ import * as t from 'io-ts';
 
 export interface ModelWeaver {
     name: string;
+    order?:number
     weave(model: Model): [Model, ModelWeaveLog[]];
 }
 
@@ -12,8 +13,10 @@ export class ModelWeaveLog implements Log {
     level: string = 'info'
     category: string = 'model-weave'
     message: string = ''
-    constructor(message: string) {
+    context: string =''
+    constructor(context:string,message: string) {
         this.message = message
+        this.context = context
     }
 }
 
