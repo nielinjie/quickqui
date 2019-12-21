@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "target":"es5",
+    "target": "es5",
     "sourceMap": true,
     "outDir": "dist",
+    "files": ["dist", "model"],
     "strict": true,
     "lib": ["esnext", "dom"],
-    "noImplicitAny":false,
+    "noImplicitAny": false,
     "moduleResolution": "node",
-    "declaration":true,
-    "allowSyntheticDefaultImports":true
+    "declaration": true,
+    "allowSyntheticDefaultImports": true
   }
 }
