@@ -1,7 +1,11 @@
 {
-  "name": "models",
+  "name": "@quick-qui/models",
   "version": "1.0.0",
   "description": "",
+  "files": [
+    "dist",
+    "model"
+  ],
   "main": ".",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

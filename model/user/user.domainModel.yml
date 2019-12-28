@@ -1,7 +1,5 @@
 entities:
   - name: User
-    # base = id + createdAt + update
-    #__base: base
     properties:
       - name: name 
         type: string
