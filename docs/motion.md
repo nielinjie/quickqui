@@ -18,12 +18,12 @@
 ## 模型的重用和组合
 
 模型有很大的重用价值。通过构建可重用的模型组件，可以有效提高应对复杂性和可变性的能力。模型的重用方式一般是组合。
-详细见[@quick-qui/model-defines](http://github.com/quickqui/model-defines)
+参见[@quick-qui/model-defines](http://github.com/quickqui/model-defines)
 
 ## 模型的自定义、可扩展
 
 模型可能有很多抽象层次和关注视角。一个系统中可能（几乎一定）有多种不同的和相互关联的模型。@quick-qui 机制允许自定义模型。并提供模型间相互影响的机制。
-详细见[@quick-qui/model-defines](http://github.com/quickqui/model-defines)
+参见[@quick-qui/model-defines](http://github.com/quickqui/model-defines)
 
 ## 实现的可重用、可组合、可扩展
 
@@ -32,7 +32,7 @@
 ## 支持实现的多样性
 
 对模型的实现可以有多种，并且各种实现可以同时存在。
-详细见[@quick-qui/builder](http://github.com/quickqui/builder)
+参见[@quick-qui/builder](http://github.com/quickqui/builder)
 
 ## 模型和实现机制与技术无关
 
