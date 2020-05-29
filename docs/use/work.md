@@ -2,7 +2,7 @@
 
 ## 概览图
 
-![总体原理](./images/work.png)
+![总体原理](../images/work.png)
 
 ## 概要说明
 
