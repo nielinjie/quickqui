@@ -13,5 +13,5 @@
 3. model-server - 对模型进行解析、组合、“编织”的处理器。参见 [@quick-qui/model-server](http://github.com/quickqui/model-server)
 4. 模型的自定义、可重用、可组合等关键机制在model-server运行，但不在model-server定义。参见 [@quick-qui/model-defines](http://github.com/quickqui/model-defines)
 5. builder - 将模型与实现相结合，生成可供运行的“成品包”，俗称“打包”。支持不同的打包形式，以支持不同的实现形态。参见 [@quick-qui/builder](http://github.com/quickqui/builder)
-6. launcher - 负责将“成品包”实际运行，启动为一个或过个“成品运行时“，这些运行时协同工作，即为成品系统。参见[@quick-qui](http://github.com/quickqui/launcher)
+6. launcher - 负责将“成品包”实际运行，启动为一个或过个“成品运行时“，这些运行时协同工作，即为成品系统。参见[@quick-qui/launcher](http://github.com/quickqui/launcher)
 7. 实现形态有多种，也就是通过builder可以构筑多种”成品包“和运行为多种“成品运行时”的组合，以适应不同的环境和技术栈运行。
