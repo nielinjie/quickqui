@@ -1,0 +1,10 @@
+implementations:
+  - name: back-raw
+    abstract: true
+    injections: [dataProvider, env]
+    runtime: command
+    parameters:
+      path: "app-server"
+      command: "npm"
+      args: ["start"]
+  
