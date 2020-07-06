@@ -14,9 +14,12 @@ export class ModelWeaveLog implements Log {
     category: string = 'model-weave'
     message: string = ''
     context: string =''
-    constructor(context:string,message: string) {
+    constructor(context:string,message: string,error:boolean=false) {
         this.message = message
         this.context = context
+        if(error){
+            this.level = 'error'
+        }
     }
 }
 
