@@ -1,9 +1,9 @@
 implementations:
-  - name: web-front-raw
+  - name: web-front-npm
     abstract: true
     runtime: command
     parameters:
       #NOTE 应该仅用于开发。
-      path: "front3"
       command: "npm"
       args: ["run", "start-without-clean"]
+      packageName: "@quick-qui/front3"

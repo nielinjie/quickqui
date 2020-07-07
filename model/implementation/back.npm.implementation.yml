@@ -1,0 +1,10 @@
+implementations:
+  - name: back-npm
+    abstract: true
+    injections: [dataProvider, env]
+    runtime: command
+    parameters:
+      command: "npm"
+      args: ["start"]
+      packageName: "@quick-qui/app-server"
+  
