@@ -6,12 +6,12 @@ export function notNil<TValue>(
 export function replaceInObject(
   obj: any,
   find: RegExp,
-  replace: (found: string) => any
+  replace: (matchResult: string[]) => any
 ) {
   const ret: any = {};
   Object.keys(obj).forEach((key) => {
     if (obj[key] && typeof obj[key] === "string" && find.test(obj[key])) {
-      ret[key] = replace(obj[key]);
+      ret[key] = replace(find.exec(obj[key]) ?? []);
     } else {
       ret[key] = obj[key];
     }
