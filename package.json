@@ -5,12 +5,24 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/main.js",
+    "test": "jest"
   },
   "author": "nielinjie <nielinjie@outlook.com>",
   "license": "ISC",
+  "jest": {
+    "rootDir": "dist"
+  },
   "devDependencies": {
+    "@types/jest": "^26.0.16",
     "@types/typescript": "^2.0.0",
+    "jest": "^26.6.3",
     "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.165",
+    "@types/node": "^14.14.8",
+    "lodash": "^4.17.20",
+    "uri-js": "^4.4.0"
   }
 }
