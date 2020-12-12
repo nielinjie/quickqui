@@ -1,22 +1,34 @@
 import l from "lodash";
+import assert from "assert";
 
 declare global {
   interface Object {
-    p;
-    _;
+    applyTo<O, T>(this: O, fun: (obj: O) => T): T;
+    doWith<O>(this: O, fun: (obj: O) => unknown): O;
   }
-  interface Boolean {
-    p;
-  }
+  // interface Boolean {
+  //   applyTo;
+  //   doWith;
+  // }
 }
-Object.prototype.p = function <O, T>(this: O, fun: (obj: O) => T): T {
+function inject(obj: any, name: string, fun: any) {
+  Object.defineProperty(obj, name, { value: fun, enumerable: false });
+}
+
+inject(Object.prototype, "applyTo", function <
+  O,
+  T
+>(this: NonNullable<O>, fun: (obj: NonNullable<O>) => T): T {
+  assert(l.isFunction(fun), "fun is not function");
   return fun(this);
-};
-Object.prototype._ = function () {
-  return l(this);
-};
-Boolean.prototype.p = function <O, T>(this: O, fun: (obj: O) => T): T {
-  return fun(this);
-};
+});
+
+inject(Object.prototype, "doWith", function <
+  O
+>(this: NonNullable<O>, fun: (obj: NonNullable<O>) => unknown): O {
+  assert(l.isFunction(fun), "fun is not function");
+  fun(this);
+  return this;
+});
 
 export {};
