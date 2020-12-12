@@ -13,7 +13,7 @@ export function parse(str: string, insure?: URI): URI {
   const re = {
     scheme: u.scheme,
     host: u.host,
-    path: u.path?.p((_) => _.split("/")),
+    path: u.path?.applyTo((_: string) => _.split("/")),
   };
   if (insure) {
     if (insure.scheme && insure.scheme !== re.scheme) {
