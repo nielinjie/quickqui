@@ -9,8 +9,19 @@ export function replaceInObject(
   replace: (matchResult: string[]) => any
 ) {
   const ret: any = {};
+  if (Array.isArray(obj)) {
+    return obj.map((a) => {
+      return replaceInObject(a, find, replace);
+    });
+  }
   Object.keys(obj).forEach((key) => {
-    if (obj[key] && typeof obj[key] === "string" && find.test(obj[key])) {
+    if (obj[key] && typeof obj[key] === "object") {
+      ret[key] = replaceInObject(obj[key], find, replace);
+    } else if (
+      obj[key] &&
+      typeof obj[key] === "string" &&
+      find.test(obj[key])
+    ) {
       ret[key] = replace(find.exec(obj[key]) ?? []);
     } else {
       ret[key] = obj[key];
@@ -25,4 +36,3 @@ export function filterObject(obj: any) {
     .forEach((key) => (ret[key] = obj[key]));
   return ret;
 }
-
