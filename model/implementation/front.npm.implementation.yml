@@ -2,6 +2,7 @@ implementations:
   - name: web-front-npm
     abstract: true
     runtime: command
+    injections: [dataProvider, env]
     parameters:
       #NOTE 应该仅用于开发。
       command: "npm"
