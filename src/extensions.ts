@@ -12,7 +12,11 @@ declare global {
   // }
 }
 function inject(obj: any, name: string, fun: any) {
-  Object.defineProperty(obj, name, { value: fun, enumerable: false });
+  if (obj[name] !== undefined) {
+    //TODO 有可能被load两次，所以需要这个判断，当util包在不同的node_modules路径下时。
+  } else {
+    Object.defineProperty(obj, name, { value: fun, enumerable: false });
+  }
 }
 
 inject(Object.prototype, "applyTo", function <
