@@ -6,7 +6,7 @@ export function notNil<TValue>(
 export function replaceInObject(
   obj: any,
   find: RegExp,
-  replace: (matchResult: string[]) => any
+  replace: (matchResult: RegExpExecArray ) => any
 ) {
   const ret: any = {};
   if (Array.isArray(obj)) {
@@ -22,7 +22,8 @@ export function replaceInObject(
       typeof obj[key] === "string" &&
       find.test(obj[key])
     ) {
-      ret[key] = replace(find.exec(obj[key]) ?? []);
+      //TODO 只处理了匹配一次的情况。
+      ret[key] = replace(find.exec(obj[key])!);
     } else {
       ret[key] = obj[key];
     }
