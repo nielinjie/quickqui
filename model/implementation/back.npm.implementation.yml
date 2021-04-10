@@ -3,6 +3,8 @@ implementations:
     abstract: true
     injections: [dataProvider, env]
     runtime: command
+    env:
+      PORT: ${let('backEndPort',getPort(4001))}
     parameters:
       command: "npm"
       args: ["start"]

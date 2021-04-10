@@ -1,0 +1,10 @@
+implementations:
+  - name: raw-launcher
+    runtime: launcher
+    env:
+      PORT: ${letIfNo('modelServerPort',getPort(1101))}
+      MODEL_URL: "http://localhost:${modelServerPort}"
+    parameters:
+      type: raw
+      model_server_path: "model-server"
+      quickqui_base: ".."

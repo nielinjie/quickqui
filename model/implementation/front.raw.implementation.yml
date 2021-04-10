@@ -3,6 +3,9 @@ implementations:
     abstract: true
     runtime: command
     injections: [dataProvider, env]
+    env:
+      PORT: ${let('frontEndPort',getPort(3001))}
+      APP_SERVER_URL: "http://localhost:${backEndPort}"
     parameters:
       #NOTE 应该仅用于开发。
       path: "front3"

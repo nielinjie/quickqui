@@ -1,0 +1,8 @@
+implementations:
+  - name: devNpm-launcher
+    runtime: launcher
+    env:
+      PORT: ${letIfNo('modelServerPort',getPort(1101))}
+      MODEL_URL: "http://localhost:${modelServerPort}"
+    parameters:
+      type: devNpm
