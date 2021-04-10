@@ -1,5 +1,6 @@
 implementations:
   - name: devNpm-launcher
+    abstract: true
     runtime: launcher
     env:
       PORT: ${letIfNo('modelServerPort',getPort(1101))}

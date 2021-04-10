@@ -1,6 +1,7 @@
 implementations:
   - name: raw-launcher
     runtime: launcher
+    abstract: true
     env:
       PORT: ${letIfNo('modelServerPort',getPort(1101))}
       MODEL_URL: "http://localhost:${modelServerPort}"
