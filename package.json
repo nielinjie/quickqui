@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.165",
+    "jexl": "^2.3.0",
     "lodash": "^4.17.20",
+    "merge-options": "^3.0.4",
     "uri-js": "^4.4.0"
   }
 }

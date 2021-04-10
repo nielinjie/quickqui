@@ -15,5 +15,8 @@
         "titleBar.inactiveBackground": "#e6a25499",
         "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#e6a254"
+    "peacock.color": "#e6a254",
+    "cSpell.words": [
+        "Jexl"
+    ]
 }
