@@ -1,5 +1,5 @@
 import mergeOptions from "merge-options";
-
+import logger from "debug-logger";
 export function notNil<TValue>(
   value: TValue | null | undefined
 ): value is TValue {
@@ -85,4 +85,7 @@ export function filterObject(obj: any) {
 }
 export function deepMerge(obj: any, source: any): any {
   return mergeOptions.call({ concatArrays: true }, obj, source) ;
+}
+export function logging(name:string){
+  return logger(name)
 }

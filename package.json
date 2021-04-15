@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.165",
+    "debug-logger": "^0.4.1",
     "jexl": "^2.3.0",
     "lodash": "^4.17.20",
     "merge-options": "^3.0.4",
