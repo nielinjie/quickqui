@@ -1,6 +1,6 @@
 {
   "name": "@quick-qui/model-core",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "model core",
   "main": "dist/index.js",
   "repository": "https://github.com/quickqui/model-core",
