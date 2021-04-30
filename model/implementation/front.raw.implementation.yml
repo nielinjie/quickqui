@@ -2,7 +2,7 @@ implementations:
   - name: web-front-raw
     abstract: true
     runtime: command
-    injections: [dataProvider, env]
+    injections: [dataProvider, env, eventBus]
     env:
       PORT: ${let('frontEndPort',getPort(3001))}
       APP_SERVER_URL: "http://localhost:${backEndPort}"

@@ -1,7 +1,7 @@
 implementations:
   - name: back-raw
     abstract: true
-    injections: [dataProvider, env]
+    injections: [dataProvider, env, eventBus]
     runtime: command
     env:
       PORT: ${let('backEndPort',getPort(4001))}
@@ -9,4 +9,3 @@ implementations:
       path: "app-server"
       command: "npm"
       args: ["start"]
-  
