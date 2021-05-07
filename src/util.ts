@@ -1,5 +1,7 @@
 import mergeOptions from "merge-options";
 import logger from "debug-logger";
+import _ from "lodash";
+import FP from 'lodash/fp'
 export function notNil<TValue>(
   value: TValue | null | undefined
 ): value is TValue {
@@ -83,9 +85,29 @@ export function filterObject(obj: any) {
     });
   return ret;
 }
+
+export function findIn(obj: any, fun) {
+  const fla = flattenKeys(obj);
+  return _.pickBy(fla, (value, key) => fun(value));
+}
+
+
 export function deepMerge(obj: any, source: any): any {
-  return mergeOptions.call({ concatArrays: true }, obj, source) ;
+  return mergeOptions.call({ concatArrays: true }, obj, source);
 }
-export function logging(name:string){
-  return logger(name)
+export function logging(name: string) {
+  return logger(name);
 }
+
+export const flattenKeys = (obj, path: string[] = []) =>
+  !_.isObject(obj)
+    ? { [path.join(".")]: obj }
+    : _.reduce(
+        obj,
+        (cum, next, key) => _.merge(cum, flattenKeys(next, [...path, key])),
+        {}
+      );
+export const unflattenKeys = FP.flow([
+  FP.toPairs,
+  FP.reduce((cum, [key, value]) => _.set(cum, key, value), {}),
+]);
