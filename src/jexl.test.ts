@@ -35,7 +35,7 @@ test("mutable evaluate", async () => {
   const [re, newContext] = await jp.eval(`let('b',2)`);
   expect(re).toEqual(2);
   expect(newContext).toEqual({ a: 1, b: 2 });
-  const [re2, newContext2] = await jp.eval(`b`);
+  const [re2, newContext2] = await new JexlPlus(je,newContext).eval(`b`);
   expect(re2).toEqual(2);
   expect(newContext2).toEqual({ a: 1, b: 2 });
 });
@@ -46,7 +46,9 @@ test("mutable evaluate with deep", async () => {
   const [re, newContext] = await jp.eval(`let('a.d',3)`);
   expect(re).toEqual(3);
   expect(newContext).toEqual({ a: { c: 1, d: 3 } });
-  const [re2, newContext2] = await jp.eval(`a.d`);
+  const [re2, newContext2] =  await new JexlPlus(je, newContext).eval(
+    `a.d`
+  );
   expect(re2).toEqual(3);
   expect(newContext2).toEqual({ a: { c: 1, d: 3 } });
 });

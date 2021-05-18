@@ -3,8 +3,8 @@ import assert from "assert";
 
 declare global {
   interface Object {
-    applyTo<O, T>(this: O, fun: (obj: O) => T): T;
-    doWith<O>(this: O, fun: (obj: O) => unknown): O;
+    q_applyTo<O, T>(this: O, fun: (obj: O) => T): T;
+    q_doWith<O>(this: O, fun: (obj: O) => unknown): O;
   }
   // interface Boolean {
   //   applyTo;
@@ -19,7 +19,7 @@ function inject(obj: any, name: string, fun: any) {
   }
 }
 
-inject(Object.prototype, "applyTo", function <
+inject(Object.prototype, "q_applyTo", function <
   O,
   T
 >(this: NonNullable<O>, fun: (obj: NonNullable<O>) => T): T {
@@ -27,7 +27,7 @@ inject(Object.prototype, "applyTo", function <
   return fun(this);
 });
 
-inject(Object.prototype, "doWith", function <
+inject(Object.prototype, "q_doWith", function <
   O
 >(this: NonNullable<O>, fun: (obj: NonNullable<O>) => unknown): O {
   assert(l.isFunction(fun), "fun is not function");
