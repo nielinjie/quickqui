@@ -20,7 +20,7 @@ implementations:
     lifeCycle:
       building:
         command: "npm"
-        args: ["run", "build"]
+        args: ["run", "product-build"]
     parameters:
       command: "npm"
       args: ["run", "product-start"]
