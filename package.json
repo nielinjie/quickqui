@@ -7,5 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "nielinjie <nielinjie@outlook.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@quick-qui/model-core": "^2.1.2",
+    "@quick-qui/model-defines": "^2.7.12",
+    "@types/lodash": "^4.14.170",
+    "enjoi": "^6.0.2",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.2",
+    "typescript": "^4.3.2"
+  }
 }
