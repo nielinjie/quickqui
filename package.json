@@ -1,6 +1,6 @@
 {
   "name": "@quick-qui/implementation-model",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,8 @@
     "@types/node": "^15.12.2",
     "typescript": "^4.3.2"
   },
-  "files":["dist","model"]
+  "files": [
+    "dist",
+    "model"
+  ]
 }
