@@ -1,5 +1,5 @@
 implementations:
-  - name: flatNpm-launcher
+  - name: npm-launcher
     abstract: true
     runtime: launcher
     env:
