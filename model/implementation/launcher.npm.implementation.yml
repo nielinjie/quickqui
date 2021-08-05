@@ -6,4 +6,4 @@ implementations:
       PORT: ${letIfNo('modelServerPort',getPort(1101))}
       MODEL_URL: "http://localhost:${modelServerPort}"
     parameters:
-      type: flatNpm
+      type: npm

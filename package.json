@@ -11,14 +11,14 @@
   "license": "ISC",
   "dependencies": {
     "@quick-qui/model-core": "^2.1.2",
-    "@quick-qui/model-defines": "^2.7.12",
-    "@types/lodash": "^4.14.170",
+    "@quick-qui/model-defines": "^2.9.3",
+    "@types/lodash": "^4.14.172",
     "enjoi": "^6.0.2",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@types/node": "^15.12.2",
-    "typescript": "^4.3.2"
+    "@types/node": "^16.4.10",
+    "typescript": "^4.3.5"
   },
   "files": [
     "dist",
