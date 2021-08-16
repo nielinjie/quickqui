@@ -19,6 +19,7 @@ export interface ModelDefine {
     model: Model,
     buildingContext?: any
   ): ValidateError[];
+  normalize?(model: Model, piece: any): any;
   merge(model: Model, piece: any, buildingContext?: any): Model;
   validateAfterMerge(model: Model): ValidateError[];
   validateAfterWeave(model: Model): ValidateError[];
@@ -32,5 +33,5 @@ export const modelDefineRuntimeType = t.type({
   merge: t.Function,
   validateAfterMerge: t.Function,
   validateAfterWeave: t.Function,
-  weavers: t.array(modelWeaverRT)
+  weavers: t.array(modelWeaverRT),
 });
