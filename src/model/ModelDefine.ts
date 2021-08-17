@@ -7,13 +7,15 @@ import { modelWeaverRT } from "./ModelWeaver";
 
 export interface ModelDefineConfig {
   name: string;
-  filePattern: string;
+  filePattern?: string;
+  objectPattern?: string;
   extend: Promise<any>;
 }
 
 export interface ModelDefine {
   name: string;
-  filePattern: string;
+  filePattern?: string;
+  objectPattern?: string;
   validatePiece(
     piece: any,
     model: Model,
@@ -26,12 +28,13 @@ export interface ModelDefine {
   weavers: ModelWeaver[];
 }
 
-export const modelDefineRuntimeType = t.type({
-  name: t.string,
-  filePattern: t.string,
-  validatePiece: t.Function,
-  merge: t.Function,
-  validateAfterMerge: t.Function,
-  validateAfterWeave: t.Function,
-  weavers: t.array(modelWeaverRT),
-});
+// export const modelDefineRuntimeType = t.type({
+//   name: t.string,
+//   filePattern: t.string,
+//   objectPattern: t.optional(t.string),
+//   validatePiece: t.Function,
+//   merge: t.Function,
+//   validateAfterMerge: t.Function,
+//   validateAfterWeave: t.Function,
+//   weavers: t.array(modelWeaverRT),
+// });

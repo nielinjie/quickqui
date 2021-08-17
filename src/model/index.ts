@@ -7,7 +7,6 @@ export {
 export {
     ModelDefineConfig,
     ModelDefine,
-    modelDefineRuntimeType
 } from "./ModelDefine";
 export {
     ModelValidator,
