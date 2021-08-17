@@ -1,16 +1,17 @@
-import { Model } from './Model';
-import { Log } from './Log';
+import { Model } from "./Model";
+import { Log } from "./Log";
 export interface ModelValidator {
-    validate(model: Model): ValidateError[]
+  validate(model: Model): ValidateLog[];
 }
 
-export class ValidateError implements Log {
-    category: string = 'model-validate'
-    level: string = 'error'
-    message: string = ''
-    context:string = ''
-    constructor(context:string,message: string) {
-        this.message = message
-        this.context = context
-    }
+export class ValidateLog implements Log {
+  category: string = "model-validate";
+  level: string;
+  message: string = "";
+  context: string = "";
+  constructor(context: string, message: string, level: string = "error") {
+    this.message = message;
+    this.context = context;
+    this.level = level;
+  }
 }

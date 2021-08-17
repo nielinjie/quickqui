@@ -1,9 +1,7 @@
-import { ValidateError } from "./ModelValidator";
+import { ValidateLog } from "./ModelValidator";
 import { Model } from "./Model";
 
-import * as t from "io-ts";
-import { ModelWeaver } from ".";
-import { modelWeaverRT } from "./ModelWeaver";
+import { Log, ModelWeaver } from ".";
 
 export interface ModelDefineConfig {
   name: string;
@@ -11,30 +9,26 @@ export interface ModelDefineConfig {
   objectPattern?: string;
   extend: Promise<any>;
 }
-
+export class NormalizeLog implements Log {
+  category: string = "model-normalize";
+  level: string;
+  message: string = "";
+  context: string = "";
+  constructor(context: string, message: string, level: string = "info") {
+    this.message = message;
+    this.context = context;
+    this.level = level;
+  }
+}
 export interface ModelDefine {
   name: string;
   filePattern?: string;
   objectPattern?: string;
-  validatePiece(
-    piece: any,
-    model: Model,
-    buildingContext?: any
-  ): ValidateError[];
-  normalize?(model: Model, piece: any): any;
+  validatePiece(piece: any, model: Model, buildingContext?: any): ValidateLog[];
+  normalize?(model: Model, piece: any): [any, NormalizeLog[]];
   merge(model: Model, piece: any, buildingContext?: any): Model;
-  validateAfterMerge(model: Model): ValidateError[];
-  validateAfterWeave(model: Model): ValidateError[];
+  validateAfterMerge(model: Model): ValidateLog[];
+  validateAfterWeave(model: Model): ValidateLog[];
   weavers: ModelWeaver[];
 }
 
-// export const modelDefineRuntimeType = t.type({
-//   name: t.string,
-//   filePattern: t.string,
-//   objectPattern: t.optional(t.string),
-//   validatePiece: t.Function,
-//   merge: t.Function,
-//   validateAfterMerge: t.Function,
-//   validateAfterWeave: t.Function,
-//   weavers: t.array(modelWeaverRT),
-// });

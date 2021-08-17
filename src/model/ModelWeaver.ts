@@ -6,10 +6,10 @@ import * as t from 'io-ts';
 export interface ModelWeaver {
     name: string;
     order?:number
-    weave(model: Model): [Model, ModelWeaveLog[]];
+    weave(model: Model): [Model, WeaveLog[]];
 }
 
-export class ModelWeaveLog implements Log {
+export class WeaveLog implements Log {
     level: string = 'info'
     category: string = 'model-weave'
     message: string = ''
@@ -27,8 +27,3 @@ export interface ModelWeaverConfig {
     name:string;
     extend:Promise<ModelWeaver>;
 }
-export const modelWeaverRT = t.type({
-    name:t.string,
-    // TODO, instance的方法不是这样的。https://github.com/gcanti/io-ts/issues/272
-    // weave:t.Function
-})
