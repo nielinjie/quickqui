@@ -15,3 +15,8 @@ export class ValidateLog implements Log {
     this.level = level;
   }
 }
+export class ValidateError extends ValidateLog {
+  constructor(context: string, message: string) {
+    super(context, message, "error");
+  }
+}
