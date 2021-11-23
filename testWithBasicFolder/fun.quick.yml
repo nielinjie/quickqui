@@ -1,0 +1,9 @@
+pages:
+  - name: testPage
+    menuPath: Function/All
+    layout:
+      grid: 2
+    places: []
+functions:
+  testFunction:
+    resource: functions

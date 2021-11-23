@@ -1,0 +1,27 @@
+infos:
+  issuesByFinished:
+    type: resource
+    resources: [issuesByFinished]
+    entities: [IssuesByFinished]
+    scope: domain
+    annotations:
+      implementation:
+        at: front
+        source: "resolve:issueDp"
+entities:
+  Issue:
+    properties:
+      title: [String, [required]]
+      owner: [one-users, [required]]
+      done: [Boolean]
+      function: [one-functions, [required]]
+      deadline: [DateTime]
+  NewProfile:
+    inject: entities/Profile
+    properties:
+      code: [String]
+  IssuesByFinished:
+    properties:
+      done: [String]
+      count: [Number]
+      
