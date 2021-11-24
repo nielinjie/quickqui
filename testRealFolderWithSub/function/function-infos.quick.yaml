@@ -1,0 +1,24 @@
+entities:
+  Function: 
+    properties:
+      group: [String,[required]]
+      name: [String,[required]]
+      content: [String, [required]]
+      owner: [one-users, [required]]
+infos:
+  Function:
+    resources: [functions, issues]
+    entities: [Function,Issue]
+    scope: domain
+    type: resource
+    annotations: 
+      implementation:
+        at: back
+        source: fake
+        fakeData: "resolve:functionFake.yml"
+  functionSelected:
+    type: event
+    scope: session
+    annotations: 
+      implementation:
+        at: front

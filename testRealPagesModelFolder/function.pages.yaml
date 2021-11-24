@@ -1,0 +1,19 @@
+pages:
+  functionMasterDetail:
+    menuPath: Function/All
+    layout:
+      grid: 2
+    places:
+      FunctionList:
+        presentation: default
+      FunctionDetail:
+        presentation: default
+  dashboard:
+    order: -10000
+    menuPath: Dashboard
+    icon: Dashboard
+    layout: 
+      grid: 3
+    places:
+      NotDoneCount: 
+        presentation: normal

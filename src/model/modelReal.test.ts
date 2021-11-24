@@ -3,20 +3,21 @@ import { ModelManager } from "@quick-qui/model-server/dist/model/ModelManager";
 import path from "path";
 test("a typical model", async () => {
   expect.hasAssertions();
-  const proPath = path.join(process.cwd(), "./testRealFolder");
-  const manager = new ModelManager(
-    {
-      protocol: "folder",
-      resource: path.resolve(proPath),
-    },
-    process.cwd()
-  );
-  expect(manager).not.toBeUndefined;
-  const model = await manager.getModel();
+  const { model, manager } = await buildModelFromFolder("./testRealFolder");
   expect(model).not.toBeUndefined;
   const logs = await manager.getBuildLogs();
-  expect(logs.length).not.toBe(0);
-  dump(logs);
+  expect(hasError(logs)).toBe(false);
+  if (hasError(logs)) {
+    console.log("error logs :>> ", logs);
+  }
+});
+test("a typical model with sub folder", async () => {
+  expect.hasAssertions();
+  const { model, manager } = await buildModelFromFolder(
+    "./testRealFolderWithSub"
+  );
+  expect(model).not.toBeUndefined;
+  const logs = await manager.getBuildLogs();
   expect(hasError(logs)).toBe(false);
   if (hasError(logs)) {
     console.log("error logs :>> ", logs);
@@ -32,7 +33,6 @@ test("a real only with functions", async () => {
   expect(logs.length).not.toBe(0);
   dump(logs);
   expect(hasErrorMoreThan(logs, "no info model find")).toBe(false);
-  
 });
 
 test("a real only with infos", async () => {
@@ -61,7 +61,20 @@ test("a real  with infos and entities", async () => {
     fail("have errors");
   }
 });
+test("a real with pages", async () => {
+  expect.hasAssertions();
+  const { model, manager } = await buildModelFromFolder(
+    "./testRealPagesModelFolder"
+  );
+  expect(model).not.toBeUndefined;
+  const logs = await manager.getBuildLogs();
 
+  expect(logs.length).not.toBe(0);
+  if (hasError(logs)) {
+    dump(logs);
+    fail("have errors");
+  }
+});
 async function buildModelFromFolder(modelFolder: string) {
   const proPath = path.join(process.cwd(), modelFolder);
   const manager = new ModelManager(

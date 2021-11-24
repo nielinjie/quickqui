@@ -1,0 +1,56 @@
+functions:
+  FinishIssue:
+    resource: issues
+    extend: functions/edit
+    command.prefill:
+      done: true
+  NotDone:
+    resource: issues
+    extend: functions/list
+    query.filter:
+      done: false
+    sort:
+      createdAt: DESC
+    links:
+      FinishIssue:
+        type: entity
+        page: FinishIssue
+  Finished:
+    resource: issues
+    extend: functions/list
+    query.filter:
+      done: true
+    sort:
+      createdAt: DESC
+    annotations:
+      page:
+        menuPath: Issue/Finished
+        icon: CheckCircle
+  NotDoneCount:
+    parameters: 
+      icon: CheckCircle
+    resource: issues
+    extend: functions/iconCard
+    query.filter:
+      done: false
+  IssueCreate:
+    resource: issues
+    extend: functions/create
+    command.prefill:
+      done: false
+    annotations:
+      page:
+        menuPath: Issue/Create
+        icon: List
+  IssuesByFinished:
+    resource: issues
+    parameters:
+      chartType: Doughnut
+      sources:
+        - label: doneOrNot
+          y: count
+    annotations:
+      page:
+        menuPath: Issue/ByFinished
+        icon: PieChart
+      implementation: "resolve:view/Cv"

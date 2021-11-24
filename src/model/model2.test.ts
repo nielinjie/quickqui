@@ -13,7 +13,6 @@ test("a typical model", async () => {
   );
   expect(manager).not.toBeUndefined;
   const model = await manager.getModel();
-  // expect(model).not.toBeUndefined;  
   const logs = await manager.getBuildLogs();
   expect(logs.length).not.toBe(0);
   expect(hasError(logs)).toBe(false);
