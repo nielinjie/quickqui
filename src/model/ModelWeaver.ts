@@ -1,6 +1,5 @@
 import { Log } from "./Log"
 import { Model } from "./Model"
-import * as t from 'io-ts';
 
 
 export interface ModelWeaver {
