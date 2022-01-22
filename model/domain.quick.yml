@@ -1,0 +1,33 @@
+entities:
+  Task:
+    properties:
+      id: [string]
+      done: [boolean]
+      description: [string]
+infos:
+  task:
+    resources: [task]
+    entities: [Task]
+    scope: local
+    type: resource
+    default: 
+      task:
+        - id: task1
+          done: false
+          description: task 1
+    annotations:
+      implementation:
+        at: front
+        source: storage 
+functions: 
+  taskList:
+    resource: task
+    extend: functions/list
+pages:
+    tasks:
+        menuPath: Tasks
+        places:
+          taskList:
+            presentation: default
+      
+

@@ -1,0 +1,11 @@
+implementations:
+  - name: mini-raw-back
+    extend: "implementations/back-raw"
+  - name: mini-raw-web-front
+    extend: "implementations/web-front-raw"
+  - name: mini-raw-launcher
+    extend: "implementations/raw-launcher"
+    env:
+      MODEL_PATH: "../mini"
+    parameters:
+      launch: ["mini-raw-back", "mini-raw-web-front"]

@@ -1,0 +1,17 @@
+{
+  "name": "mini",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nielinjie <nielinjie@outlook.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@quick-qui/implementation-model": "^1.10.6",
+    "@quick-qui/model-defines": "^2.9.6",
+    "@quick-qui/models": "^1.1.1",
+    "@quick-qui/quick-define": "^0.5.1"
+  }
+}

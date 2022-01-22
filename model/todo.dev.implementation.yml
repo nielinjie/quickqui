@@ -1,0 +1,9 @@
+implementations:
+  - name: dev-npm-launcher
+    extend: "implementations/npm-launcher"
+    parameters:
+      launch: ["npm-back", "npm-web-front"]
+  - name: npm-back
+    extend: "implementations/back-npm"
+  - name: npm-web-front
+    extend: "implementations/web-front-npm"
