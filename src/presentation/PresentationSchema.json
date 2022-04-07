@@ -1,0 +1,62 @@
+{
+  "$ref": "#/definitions/Presentation",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Annotation": {
+      "$ref": "#/definitions/StringKeyObject"
+    },
+    "Presentation": {
+      "additionalProperties": false,
+      "properties": {
+        "annotations": {
+          "$ref": "#/definitions/Annotation"
+        },
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "propertyRules": {
+          "items": {
+            "$ref": "#/definitions/PropertyRule"
+          },
+          "type": "array"
+        },
+        "uiElementRules": {
+          "$ref": "#/definitions/StringKeyObject"
+        }
+      },
+      "required": [
+        "name",
+        "namespace"
+      ],
+      "type": "object"
+    },
+    "PropertyRule": {
+      "additionalProperties": false,
+      "properties": {
+        "order": {
+          "type": "number"
+        },
+        "property": {
+          "type": "string"
+        },
+        "rules": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "property"
+      ],
+      "type": "object"
+    },
+    "StringKeyObject": {
+      "description": "abstract name ref extend inject resource extension parameters annotations order",
+      "type": "object"
+    }
+  }
+}

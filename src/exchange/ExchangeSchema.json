@@ -1,0 +1,57 @@
+{
+  "$ref": "#/definitions/Exchange",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Annotation": {
+      "$ref": "#/definitions/StringKeyObject"
+    },
+    "Exchange": {
+      "additionalProperties": false,
+      "properties": {
+        "annotations": {
+          "$ref": "#/definitions/Annotation"
+        },
+        "from": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "order": {
+          "type": "number"
+        },
+        "parameters": {
+          "$ref": "#/definitions/StringKeyObject"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "resources": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "to": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "from",
+        "name",
+        "namespace",
+        "protocol",
+        "resources",
+        "to"
+      ],
+      "type": "object"
+    },
+    "StringKeyObject": {
+      "description": "abstract name ref extend inject resource extension parameters annotations order",
+      "type": "object"
+    }
+  }
+}

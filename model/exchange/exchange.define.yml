@@ -1,0 +1,4 @@
+defines:
+  - name: exchange
+    filePattern: "**/**.@(exchange|exchangeModel|exchanges).yml"
+    define: 'resolve:exchange/ExchangeDefine'

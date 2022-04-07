@@ -1,0 +1,4 @@
+defines:
+  - name: presentation
+    filePattern: '**/**.@(presentationModel|presentations|presentation).yml'
+    define: 'resolve:presentation/PresentationDefine'

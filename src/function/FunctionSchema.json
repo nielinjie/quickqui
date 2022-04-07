@@ -1,0 +1,108 @@
+{
+  "$ref": "#/definitions/Function",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Annotation": {
+      "$ref": "#/definitions/StringKeyObject"
+    },
+    "Extend": {
+      "$ref": "#/definitions/Ref"
+    },
+    "Function": {
+      "additionalProperties": false,
+      "properties": {
+        "abstract": {
+          "type": "boolean"
+        },
+        "annotations": {
+          "$ref": "#/definitions/Annotation"
+        },
+        "command": {
+          "additionalProperties": false,
+          "properties": {
+            "prefill": {
+              "$ref": "#/definitions/StringKeyObject"
+            },
+            "redirect": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "extend": {
+          "$ref": "#/definitions/Extend"
+        },
+        "links": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "args": {
+                "$ref": "#/definitions/StringKeyObject"
+              },
+              "label": {
+                "type": "string"
+              },
+              "page": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "entity",
+                  "list"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "type",
+              "page"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "parameters": {
+          "$ref": "#/definitions/StringKeyObject"
+        },
+        "query": {
+          "additionalProperties": false,
+          "properties": {
+            "filter": {
+              "$ref": "#/definitions/StringKeyObject"
+            },
+            "parameters": {
+              "$ref": "#/definitions/StringKeyObject"
+            },
+            "sort": {
+              "$ref": "#/definitions/StringKeyObject"
+            }
+          },
+          "type": "object"
+        },
+        "resource": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "namespace",
+        "resource"
+      ],
+      "type": "object"
+    },
+    "Ref": {
+      "type": "string"
+    },
+    "StringKeyObject": {
+      "description": "abstract name ref extend inject resource extension parameters annotations order",
+      "type": "object"
+    }
+  }
+}
