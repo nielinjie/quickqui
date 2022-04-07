@@ -1,0 +1,23 @@
+{
+  "name": "@quick-qui/model-core",
+  "version": "2.4.1",
+  "description": "model core",
+  "main": "dist/index.js",
+  "repository": "https://github.com/quickqui/model-core",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nielinjie <nielinjie@outlook.com>",
+  "license": "ISC",
+  "dependencies": {
+    "fp-ts": "^2.10.4",
+    "io-ts": "^2.0.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
