@@ -1,0 +1,23 @@
+{
+  "name": "@quick-qui/models",
+  "version": "1.1.1",
+  "description": "",
+  "files": [
+    "dist",
+    "model"
+  ],
+  "main": ".",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quickqui/models.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quickqui/models/issues"
+  },
+  "homepage": "https://github.com/quickqui/models#readme"
+}
