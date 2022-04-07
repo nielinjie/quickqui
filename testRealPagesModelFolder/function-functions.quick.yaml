@@ -1,0 +1,21 @@
+functions:
+  FunctionList: 
+    resource: functions
+    extend: functions/list
+    links: 
+      Detail:
+        type: entity
+        page: functionMasterDetail
+    parameters:
+      out:
+        selectedChanged: ${info:functionSelected}
+    annotations:
+      page: 
+        menuPath: Function/List
+        icon: List
+  FunctionDetail:
+    resource: functions
+    extend: functions/show
+    parameters:
+      id: ${info:functionSelected/payload/selectedId}
+  

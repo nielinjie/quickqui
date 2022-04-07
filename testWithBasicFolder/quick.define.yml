@@ -1,0 +1,10 @@
+defines:
+  - name: functions
+    objectPattern: 'functions'
+    define: 'resolve:helper/functions'
+  - name: pages
+    objectPattern: 'pages'
+    define: 'resolve:helper/pages'
+  - name: infos
+    objectPattern: 'infos'
+    define: 'resolve:helper/infos'

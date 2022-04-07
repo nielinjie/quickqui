@@ -1,0 +1,8 @@
+infos:
+  - name: testInfo
+    type: resource
+    resources: [functions]
+    entities: [Function]
+    scope: session
+entities:
+  - name: Function
