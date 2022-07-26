@@ -6,7 +6,9 @@
   "config": {
     "imageRepo": "nielinjie/quickqui-model-server"
   },
-  
+  "jest": {
+    "rootDir": "dist"
+  },
   "dependencies": {
     "@hapi/joi": "^14.5.0",
     "@quick-qui/model-core": "^2.4.1",
