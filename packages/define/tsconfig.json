@@ -10,6 +10,9 @@
     "moduleResolution": "node",
     "module": "CommonJS",
     "resolveJsonModule": true,
-    "esModuleInterop": true 
+    "esModuleInterop": true ,
+    "useUnknownInCatchVariables": false,
+
+
   },
 }

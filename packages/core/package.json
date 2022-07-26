@@ -2,12 +2,10 @@
   "name": "@quick-qui/model-core",
   "version": "2.4.1",
   "description": "model core",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
   "repository": "https://github.com/quickqui/model-core",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "types": "./dist/index.d.ts",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
