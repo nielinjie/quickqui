@@ -1,0 +1,19 @@
+infos:
+  - name: user
+    scope: domain
+    type: resource
+    resources: [users, Profile]
+    entities: [User,Profile]
+    annotations:
+      implementation:
+        at: back
+        source: fake
+        fakeData:
+          User:
+            - id: "1"
+              name: ada
+              "profile.id": "1"
+          Profile:
+            - id: "1"
+              code: "Profile1"
+              description: "I am user 1"

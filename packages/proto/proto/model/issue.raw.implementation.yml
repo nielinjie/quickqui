@@ -1,0 +1,11 @@
+implementations:
+  - name: issue-raw-back
+    extend: "implementations/back-raw"
+  - name: issue-raw-web-front
+    extend: "implementations/web-front-raw"
+  - name: issue-raw-launcher
+    extend: "implementations/raw-launcher"
+    env:
+      MODEL_PATH: "../prototype"
+    parameters:
+      launch: ["issue-raw-back", "issue-raw-web-front"]

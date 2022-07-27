@@ -1,0 +1,21 @@
+functions: 
+  - name: FunctionList
+    resource: functions
+    extend: functions/list
+    annotations:
+      page:
+        menuPath: Function/List
+        icon: List
+    links:
+      - label: Detail
+        type: entity
+        page: functionMasterDetail
+        # parameters: id
+    parameters: 
+      out: 
+        selectedChanged: ${info:functionSelected} #scope（session)没有必要，因为info里面是有scope的。
+  - name: FunctionDetail
+    resource: functions
+    extend: functions/show
+    parameters: 
+        id: ${info:functionSelected/payload/selectedId} #.id变成/id，为了去符合url的规则p/a/t/h

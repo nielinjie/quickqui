@@ -1,0 +1,27 @@
+infos:
+  - name: Function
+    resources: [functions, issues]
+    entities: [Function,Issue]
+    scope: domain
+    type: resource
+    annotations: 
+      implementation:
+        at: back
+        source: fake
+        fakeData: "resolve:functionFake.yml"
+  - name: functionSelected
+    type: event
+    scope: session
+    annotations: 
+      implementation:
+        at: front
+  - name: issueByFinished
+    type: resource
+    resources: [issueByFinished]
+    entities: [IssueByFinished]
+    scope: domain
+    annotations:
+      implementation:
+        at: front
+        source: 'resolve:issueDp'
+  

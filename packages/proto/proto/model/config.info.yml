@@ -1,0 +1,14 @@
+infos:
+  - name: config
+    resources: [config]
+    entities: [Config]
+    scope: local
+    type: resource
+    default:
+      config:
+        - id: _default
+          name: configMe
+    annotations:
+      implementation:
+        at: front
+        source: storage

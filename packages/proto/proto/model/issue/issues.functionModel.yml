@@ -1,0 +1,61 @@
+functions:
+  - name: NotDone
+    extend: functions/list
+    annotations:
+      page:
+        menuPath: Issue/NotDone
+        icon: RadioButtonUnchecked
+    resource: issues
+    query:
+      filter:
+        done: false
+      sort:
+        createdAt: DESC
+    links:
+      - label: FinishIssue
+        type: entity
+        page: FinishIssue
+  - name: Finished
+    annotations:
+      page:
+        menuPath: Issue/Finished
+        icon: CheckCircle
+    resource: issues
+    extend: functions/list
+    query:
+      filter:
+        done: true
+      sort:
+        createdAt: DESC
+  - name: NotDoneCount
+    parameters:
+      icon: CheckCircle
+    resource: issues
+    extend: functions/iconCard
+    query:
+      filter:
+        done: false
+  - name: IssueCreate
+    resource: issues
+    extend: functions/create
+    annotations:
+      page:
+        menuPath: Issue/Create
+        icon: List
+    command: 
+      prefill: 
+        done: false
+  - name: IssueByFinished
+    resource: issueByFinished
+    annotations:
+      page:
+        menuPath: Issue/ByFinished
+        icon: PieChart
+      #TODO 需要继续研究， 动态import如何直接import node_modules里面的模块。现在是报can not find module. 目前只有采用这个间接的方式。可能跟webpack的机制有关。
+      # implementation: "resolve:@quick-qui/front-chart/dist/ChartCardView"
+      implementation: "resolve:view/Cv"
+    parameters:
+      chartType: Doughnut
+      sources:
+        - label: doneOrNot
+          y: count

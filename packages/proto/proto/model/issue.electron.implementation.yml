@@ -1,0 +1,5 @@
+implementations:
+  - name: issue-product-electron
+    extend: "implementations/electron-launcher"
+    parameters:
+      launch: ["npm-back", "npm-web-front-product"]

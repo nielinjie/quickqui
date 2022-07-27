@@ -1,0 +1,7 @@
+implementations:
+  - name: npm-web-front-product
+    extend: "implementations/web-front-npm-product"
+  - name: issue-product
+    extend: "implementations/flatNpm-launcher"
+    parameters:
+      launch: ["npm-back", "npm-web-front-product"]
