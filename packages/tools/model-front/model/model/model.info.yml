@@ -1,0 +1,24 @@
+infos:
+  - name: inputModel
+    resources: [Model,ModelSource,Log,Refresh]
+    scope: domain
+    type: resource
+    annotations: 
+      implementation: 
+        at: front
+        source: 'resolve:dp/ModelDP'
+  - name: modelDetails
+    resources: [Entity,PartsByType,ModelUnit]
+    scope: domain
+    type: resource
+    annotations:
+      implementation:
+        at: front
+        source: 'resolve:dp/ModelDetailDP'
+  - name: UnitSelected
+    type: event
+    scope: session
+    annotations: 
+      implementation:
+        at: front
+        

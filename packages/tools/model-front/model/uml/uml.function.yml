@@ -1,0 +1,31 @@
+functions:
+  - name: DomainUml
+    resource: Uml 
+    extend: "functions/show"
+    parameters:
+      id: 'domain'
+  - name: FunctionUml
+    resource: Uml 
+    extend: "functions/show"
+    parameters:
+      id: 'function'
+  - name: PageUml
+    resource: Uml 
+    extend: "functions/show"
+    parameters:
+      id: 'page'
+  - name: ImplementationUml
+    resource: Uml 
+    extend: "functions/show"
+    parameters:
+      id: 'implementation'
+  - name: InfoUml
+    resource: Uml
+    extend: "functions/show"
+    parameters:
+      id: 'info'
+  - name: SourceUml
+    resource: Uml 
+    extend: "functions/show"
+    parameters:
+      id: 'modelSource'

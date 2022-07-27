@@ -1,0 +1,14 @@
+infos:
+  - name: config
+    resources: ["Config"]
+    scope: local
+    type: resource
+    default:
+      Config:
+        - id: _default
+          modelPath: ${env.MODEL_PATH}
+          memo: "pass via env - MODEL_PATH, can not change while running"
+    annotations:
+      implementation:
+        at: front
+        source: storage

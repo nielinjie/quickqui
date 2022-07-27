@@ -1,0 +1,12 @@
+implementations:
+  - name: npm-back
+    extend: "implementations/back-npm"
+    env:
+      UML_SERVICE_URL: "http://localhost:1608"
+      MODEL_SERVICE_URL: "http://localhost:1112"
+  - name: npm-web-front
+    extend: "implementations/web-front-npm"
+  - name: model-front-npm-launcher
+    extend: "implementations/npm-launcher"
+    parameters:
+      launch: ["npm-back", "npm-web-front"]

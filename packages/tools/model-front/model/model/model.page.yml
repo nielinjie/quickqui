@@ -1,0 +1,37 @@
+#TODO page model的配置有点太繁琐了，很多时候都是单个function。layout， places/layout都可以省略掉。
+pages:
+  - name: modelShowPage
+    menuPath: Model/Main
+    icon: AccountTree
+    places:
+      - function: ModelView
+        presentation: modelShow
+  - name: modelLogsPage
+    menuPath: Logs
+    icon: ViewHeadline
+    places:
+      - function: ModelLogsList
+  - name: ModelUnitListPage
+    menuPath: Model/UnitList
+    icon: ViewHeadline
+    places:
+      - function: ModelUnitList
+        presentation: ModelUnitList
+  - name: ModelUnitShowPage
+    places:
+      - function: ModelUnitShow
+        presentation: ModelUnitShow
+  - name: refreshPage
+    menuPath: Refresh
+    icon: Refresh
+    places:
+      - function: Refresh
+  - name: ModelUnitLD
+    menuPath: Model/ListAndDetail
+    layout:
+      grid: 2
+    places:
+      - function: ModelUnitList
+        presentation: ModelUnitList
+      - function: ModelUnitShow
+        presentation: ModelUnitShow

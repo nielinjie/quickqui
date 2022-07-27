@@ -1,0 +1,25 @@
+entities:
+  - name: Model
+    properties:
+      - name: json
+        type: string
+      - name: description
+        type: string
+  - name: Log
+    properties:
+      - name: level
+        type: string
+      - name: message
+        type: string
+      - name: category
+        type: string
+      - name: context
+        type: string
+  - name: ModelUnit
+    properties:
+      - name: name
+        type: string
+      - name: type
+        type: string
+      - name: json
+        type: string

@@ -1,0 +1,31 @@
+pages:
+  - name: DomainUml
+    menuPath: UML/Domain
+    places:
+      - function: DomainUml
+        presentation: withSvg
+  - name: FunctionUml
+    menuPath: UML/Function
+    places:
+      - function: FunctionUml
+        presentation: withSvg
+  - name: PageUml
+    menuPath: UML/Page
+    places:
+      - function: PageUml
+        presentation: withSvg
+  - name: InfoUml
+    menuPath: UML/Info
+    places:
+      - function: InfoUml
+        presentation: withSvg
+  - name: ImplementationUml
+    menuPath: UML/Implementation
+    places:
+      - function: ImplementationUml
+        presentation: withSvg
+  - name: SourceUml
+    menuPath: Sources
+    places:
+      - function: SourceUml
+        presentation: withSvg
