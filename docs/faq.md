@@ -11,7 +11,7 @@ Quick是最开始发起这个项目是的第一追求，当时想做的就是一
 > quick-qui 是代码生成工具么？
 
 不是。但可以是。quick-qui 机制没有规定实现部分的实现方法，可以用代码生成的办法来实现。
-目前的两个示范性的实现没有采用代码生成的策略，是采用的运行时动态逻辑分支的策略。参见[@quick-qui/front](http://github.com/quickqui/front)和[@quick-qui/app-server](http://github.com/quickqui/app-server)
+目前的两个示范性的实现没有采用代码生成的策略，是采用的运行时动态逻辑分支的策略。
 
 > quick-qui 是DDD工具/框架么？
 
