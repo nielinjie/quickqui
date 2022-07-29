@@ -1,0 +1,6 @@
+includes: 
+  - protocol: library
+    resource: 
+      type: npm
+      module: "@quick-qui/implementation-model"
+      dir: "model"
