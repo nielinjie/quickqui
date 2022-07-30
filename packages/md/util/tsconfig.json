@@ -10,6 +10,7 @@
     "module": "CommonJS",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "declaration": true
+    "declaration": true,
+    "skipLibCheck": true,
   }
 }
