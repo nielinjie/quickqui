@@ -1,4 +1,4 @@
-import { ModelWeaver, Model, ModelWeaveLog } from "@quick-qui/model-core";
+import { ModelWeaver, Model, WeaveLog } from "@quick-qui/model-core";
 import { getNameInsureCategory } from "@quick-qui/model-defines";
 import _ = require("lodash");
 import {
@@ -9,8 +9,8 @@ import {
 
 export class ImplementationExtendWeaver implements ModelWeaver {
   name = "implementationExtend";
-  weave(model: Model): [Model, ModelWeaveLog[]] {
-    const logs: ModelWeaveLog[] = [];
+  weave(model: Model): [Model, WeaveLog[]] {
+    const logs: WeaveLog[] = [];
     const m = model as Model & WithImplementationModel;
     m.implementationModel.implementations.forEach((imp) => {
       if (imp.extend) {
@@ -25,7 +25,7 @@ export class ImplementationExtendWeaver implements ModelWeaver {
         if (!extendTarget) {
           logs.push(
             //TODO 这里应该是validate log？
-            new ModelWeaveLog(
+            new WeaveLog(
               `implementations/${imp.name}`,
               `no extend implementation find, expected - ${extendTargetName}`,true
             )
@@ -38,7 +38,7 @@ export class ImplementationExtendWeaver implements ModelWeaver {
           const newFunction = doExtend(imp, extendTarget);
           m.implementationModel.implementations[index] = newFunction;
           logs.push(
-            new ModelWeaveLog(
+            new WeaveLog(
               `implementations/${imp.name}`,
               `extend implementation, base - ${extendTargetName}, sub - ${imp.name}`
             )

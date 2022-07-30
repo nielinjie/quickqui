@@ -2064,7 +2064,7 @@
     randomcolor "^0.6.2"
     react-chartjs-2 "^3.0.3"
 
-"@quick-qui/implementation-model@^1.10.2", "@quick-qui/implementation-model@^1.10.3", "@quick-qui/implementation-model@^1.10.6", "@quick-qui/implementation-model@^1.3.0":
+"@quick-qui/implementation-model@^1.10.6":
   version "1.10.7"
   resolved "https://registry.yarnpkg.com/@quick-qui/implementation-model/-/implementation-model-1.10.7.tgz#03aa43bc060b9976a432a6bbf0d4979f2958a6e7"
   integrity sha512-vmrc3HkH7F3JNPujjhUOoBI+3695TwpBqDozrxyAgzXEzbvGLPe1OKX6wHvivNzQ1pWMkOFa/6xdVNYmRCsHHA==
