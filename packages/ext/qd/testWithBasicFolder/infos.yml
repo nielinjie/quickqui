@@ -6,3 +6,4 @@ infos:
     scope: session
 entities:
   - name: Function
+    properties: []

@@ -8,3 +8,6 @@ defines:
   - name: infos
     objectPattern: 'infos'
     define: 'resolve:helper/infos'
+  - name: domain
+    objectPattern: 'entities'
+    define: 'resolve:helper/domain'
