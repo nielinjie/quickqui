@@ -7,7 +7,9 @@
   "files": [
     "dist"
   ],
- 
+ "jest":{
+  "rootDir":"./dist"
+ },
   "scripts": {
     "dev": "watch 'npm run buildTest' src",
     "buildTest": "run-s build test",

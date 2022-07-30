@@ -20,17 +20,17 @@ import FileSync from "lowdb/adapters/FileSync";
 beforeEach(() => {
   fs.truncateSync(".db.json");
 });
-const table = () => [
-  ["file db", dpFromLowDB(new LowWrapper({}, new FileSync(".db.json")))],
-  ["memory db", dpFromLowDB(new LowWrapper({}))],
-];
+function table(): [string, DataProvider][] {
+  return [
+    ["file db", dpFromLowDB(new LowWrapper({}, new FileSync(".db.json")))],
+    ["memory db", dpFromLowDB(new LowWrapper({}))],
+  ]
+};
 
 test.each(table())(
   "%s simple add and update",
   async (name, dp: DataProvider) => {
     expect.hasAssertions();
-    const getOne = await dp(GET_ONE, "tests", { id: 1 });
-    expect(getOne).toBeUndefined();
     const re = await dp(CREATE, "tests", { data: { name: "elsa" } });
     expect(re).toBeDefined();
     const elsa = re.data.id;
@@ -51,8 +51,6 @@ test.each(table())(
 
 test.each(table())("%s  add and find", async (name, dp: DataProvider) => {
   expect.hasAssertions();
-  const getOne = await dp(GET_ONE, "tests", { id: 1 });
-  expect(getOne).toBeUndefined();
   const re = await dp(CREATE, "tests", { data: { name: "elsa" } });
   const find = await dp(GET_LIST, "tests", {
     filter: { name: "elsa" },
@@ -65,8 +63,6 @@ test.each(table())("%s  add and find", async (name, dp: DataProvider) => {
 });
 test.each(table())("%s  add and get list", async (name, dp: DataProvider) => {
   expect.hasAssertions();
-  const getOne = await dp(GET_ONE, "tests", { id: 1 });
-  expect(getOne).toBeUndefined();
   const re = await dp(CREATE, "tests", { data: { name: "elsa" } });
   const re2 = await dp(CREATE, "tests", { data: { name: "elsa" } });
   const find = await dp(GET_LIST, "tests", {
@@ -78,12 +74,10 @@ test.each(table())("%s  add and get list", async (name, dp: DataProvider) => {
       expect.objectContaining({ name: "elsa", id: (re as any).data.id }),
     ])
   );
-  expect(find).toEqual(expect.objectContaining({total:2}))
+  expect(find).toEqual(expect.objectContaining({ total: 2 }))
 });
 test.each(table())("%s  delete", async (_, dp: DataProvider) => {
   expect.hasAssertions();
-  const getOne = await dp(GET_ONE, "tests", { id: 1 });
-  expect(getOne).toBeUndefined();
   const re = await dp(CREATE, "tests", { data: { name: "elsa" } });
   const find = await dp(GET_LIST, "tests", {
     filter: { name: "elsa" },
@@ -100,10 +94,12 @@ test.each(table())("%s  delete", async (_, dp: DataProvider) => {
   expect((findAgain as GetListResult<unknown>).total).toEqual(0);
 });
 
+test.each(table())("%s no find", async (_, dp: DataProvider) => {
+  expect.hasAssertions();
+  await expect(dp(GET_ONE, "tests", { id: 1 })).rejects.toThrow("Cannot find id = 1")
+})
 test.each(table())("%s delete many", async (_, dp: DataProvider) => {
   expect.hasAssertions();
-  const getOne = await dp(GET_ONE, "tests", { id: 1 });
-  expect(getOne).toBeUndefined();
   const re = await dp(CREATE, "tests", { data: { name: "elsa" } });
   await dp(DELETE_MANY, "tests", { ids: [re.data.id] });
   const findAgain = await dp(GET_LIST, "tests", {

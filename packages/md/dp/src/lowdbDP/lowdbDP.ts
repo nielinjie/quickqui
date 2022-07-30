@@ -31,12 +31,14 @@ export function dpFromLowDB(wrapper: LowWrapper): DataProvider {
   return dpFromDB(wrapper.db);
 }
 export function dpFromDB(db: low.LowdbSync<any>): DataProvider {
-  return (fetchType, resource, params) => {
-    const collection = db.defaults({ [resource]: [] }).get(resource);
+  return async (fetchType, resource, params) => {
+    const collection :any = db.defaults({ [resource]: [] }).get(resource);
 
     if (fetchType === GET_ONE) {
       const re = collection.getById((params as GetOneParams).id).value();
-      return re ? { data: re } : undefined;
+      if (re) 
+       return { data: re } 
+      else throw new Error(`Cannot find id = ${(params as GetOneParams).id}`);
     }
 
     if (fetchType === CREATE) {

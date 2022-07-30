@@ -93,7 +93,7 @@ export function chain(
       log(fetchType, resource, params, rea);
       return rea;
     } catch (e) {
-      if (e.status === 700) {
+      if ((e as any).status === 700) {
         const reb = await b(fetchType, resource, params);
         log(fetchType, resource, params, reb);
         return reb;

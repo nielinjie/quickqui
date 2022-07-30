@@ -12,7 +12,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true ,
     "useUnknownInCatchVariables": false,
-
+    "skipLibCheck": true,
 
   },
 }

@@ -130,7 +130,7 @@ test("for fetchType and resource one parameter promise", async () => {
 test("for fetchType and resource one parameter pain value", async () => {
   expect.hasAssertions();
 
-  const dp = forResourceAndFetchTypeOneParam("test", GET_ONE, (params: any) => {
+  const dp = forResourceAndFetchTypeOneParam("test", GET_ONE, async (params: any) => {
     return { data: { id: 1 } };
   });
   expect(() => dp(GET_ONE, "notTest", { id: 1 })).toThrow("NotCovered");
