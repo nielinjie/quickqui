@@ -1,0 +1,27 @@
+implementations:
+  - name: web-front-npm
+    abstract: true
+    runtime: command
+    injections: [dataProvider, env, eventBus]
+    env:
+      PORT: ${let('frontEndPort',getPort(3001))}
+      APP_SERVER_URL: "http://localhost:${backEndPort}"
+    parameters:
+      command: "npm"
+      args: ["run", "start-without-clean"]
+      packageName: "@quick-qui/front3"
+  - name: web-front-npm-product
+    abstract: true
+    runtime: command
+    injections: [dataProvider, env, eventBus]
+    env:
+      PORT: ${let('frontEndPort',getPort(3001))}
+      APP_SERVER_URL: "http://localhost:${backEndPort}"
+    lifeCycle:
+      building:
+        command: "npm"
+        args: ["run", "product-build"]
+    parameters:
+      command: "npm"
+      args: ["run", "product-start"]
+      packageName: "@quick-qui/front3"

@@ -1,0 +1,1 @@
+./node_modules/.bin/ts-json-schema-generator -p ./src/implementation/ImplementationModel.ts -f 'tsconfig.json' -t Implementation> ./src/implementation/ImplementationSchema.json

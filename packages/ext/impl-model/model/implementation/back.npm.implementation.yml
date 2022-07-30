@@ -1,0 +1,11 @@
+implementations:
+  - name: back-npm
+    abstract: true
+    injections: [dataProvider, env, eventBus]
+    runtime: command
+    env:
+      PORT: ${let('backEndPort',getPort(4001))}
+    parameters:
+      command: "npm"
+      args: ["start"]
+      packageName: "@quick-qui/app-server"
