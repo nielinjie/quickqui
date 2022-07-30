@@ -1,0 +1,9 @@
+functions:
+  - name: editConfig
+    resource: config
+    extend: functions/edit 
+    parameters:
+      id: '_default'
+    annotations:
+      page:
+        menuPath: Config

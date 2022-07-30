@@ -3,6 +3,7 @@ import { ModelRepository } from "../model/ModelRepository";
 import * as path from "path";
 
 import { FolderRepository } from "./FolderRepository";
+import { existsSync, fstatSync } from "fs";
 
 interface Library {
   type: string;
@@ -15,7 +16,18 @@ export class LibraryRepository {
   static async build(library: Library, root: string): Promise<ModelRepository> {
     let folder: string | undefined = undefined;
     if (library.type === "npm") {
-      folder = path.join(root, "node_modules", library.module, library.dir);
+      // NOTE: 需要使用resolve机制，而不是硬写路径。
+      // folder = path.join(root, "node_modules", library.module, library.dir);
+      let paths = require.resolve.paths(library.module)
+      // console.log('paths of resole', paths)
+      paths?.forEach(p => {const tp = path.join(p, library.module,library.dir)
+        if (existsSync(tp)){
+          folder = tp
+          // console.log("folder find ", folder)
+        }})
+
+      // let folderRoot = require.resolve(library.module, { paths: [root] })
+      // folder = folderRoot ? path.join(folderRoot, library.dir) : undefined
     }
     if (folder)
       return FolderRepository.build(
