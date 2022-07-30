@@ -19,7 +19,7 @@ export const resolve = <T extends unknown>(
   }
   return import(re!).then(obj => _interopRequireDefault(obj).default as T);
 
- 
+
 };
 function tryResolve(name: string): string | undefined {
   try {

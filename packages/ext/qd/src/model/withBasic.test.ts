@@ -16,7 +16,7 @@ test("a typical model", async () => {
   expect(model).not.toBeUndefined;
   const logs = await manager.getBuildLogs();
   expect(logs.length).not.toBe(0);
-  console.log("logs",logs)
+  // console.log("logs",logs)
   expect(hasError(logs)).toBe(false);
   expect(model).toEqual(
     expect.objectContaining({
